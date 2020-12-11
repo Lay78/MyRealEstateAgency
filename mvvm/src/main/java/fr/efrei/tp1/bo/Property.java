@@ -30,6 +30,10 @@ final public class Property implements Serializable {
         this.user = user;
     }
 
+    public Property() {
+
+    }
+
     //This class is used in order to sort a property
     public static final class PropertyComparator
             implements Comparator<Property>
@@ -45,23 +49,23 @@ final public class Property implements Serializable {
     public int id;
 
     @NonNull
-    public final String type;
+    public String type;
 
-    public final double price;
+    public double price;
 
-    public final int surface;
+    public int surface;
 
-    public final int number_rooms;
-
-    @NonNull
-    public final String description;
+    public int number_rooms;
 
     @NonNull
-    public final String address;
+    public String description;
 
-    public final double latitude;
+    @NonNull
+    public String address;
 
-    public final double longitude;
+    public double latitude;
+
+    public double longitude;
 
     @NonNull
     public final Date date_creation;
@@ -69,7 +73,7 @@ final public class Property implements Serializable {
     @NonNull
     public final Date date_last_update;
 
-    public final boolean sold;
+    public boolean sold;
 
     @NonNull
     public final User user;
