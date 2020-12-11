@@ -46,7 +46,7 @@ public final class PropertiesAdapter
         public void update(final Property user)
         {
             //We update the UI binding the current user to the current item
-            name.setText(user.name);
+            /*name.setText(user.name);
             phoneNumber.setText(user.phoneNumber);
             address.setText(user.address);
             about.setText(user.about);
@@ -67,7 +67,7 @@ public final class PropertiesAdapter
                     itemView.getContext().startActivity(intent);
                 }
 
-            });
+            });*/
         }
 
     }
