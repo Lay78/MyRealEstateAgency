@@ -68,15 +68,15 @@ final public class Property implements Serializable {
     public double longitude;
 
     @NonNull
-    public final Date date_creation;
+    public Date date_creation;
 
     @NonNull
-    public final Date date_last_update;
+    public Date date_last_update;
 
     public boolean sold;
 
     @NonNull
-    public final User user;
+    public User user;
 
     @Override
     public boolean equals(Object o) {
