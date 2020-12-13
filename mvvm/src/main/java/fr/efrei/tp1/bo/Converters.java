@@ -1,12 +1,24 @@
 package fr.efrei.tp1.bo;
 
+//import com.google.gson.Gson;
+
 import java.util.Date;
 
 import androidx.room.TypeConverter;
-import com.google.gson.Gson;
 
 public class Converters {
+
     @TypeConverter
+    public static Date toDate(Long timestamp) {
+        return timestamp == null ? null : new Date(timestamp);
+    }
+
+    @TypeConverter
+    public static Long toTimestamp(Date date) {
+        return date == null ? null : date.getTime();
+    }
+
+    /*@TypeConverter
     public static Date fromTimestamp(Long value) {
         return value == null ? null : new Date(value);
     }
@@ -14,9 +26,9 @@ public class Converters {
     @TypeConverter
     public static Long dateToTimestamp(Date date) {
         return date == null ? null : date.getTime();
-    }
+    }*/
 
-    @TypeConverter
+    /*@TypeConverter
     public static User[] fromString(String usersJson) {
         if (usersJson == null) return null;
 
@@ -32,5 +44,5 @@ public class Converters {
         Gson gson = new Gson();
         String usersJson = gson.toJson(user);
         return usersJson;
-    }
+    }*/
 }

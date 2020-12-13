@@ -2,18 +2,20 @@ package fr.efrei.tp1.bo;
 
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.Objects;
 
 import androidx.annotation.NonNull;
+import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
 final public class Property implements Serializable {
 
-    public Property(@NonNull String name, @NonNull String type, double price, int surface, int number_rooms, @NonNull String description, @NonNull String address, double latitude, double longitude, @NonNull Date date_creation, @NonNull Date date_last_update, boolean sold, @NonNull User user) {
+    public Property(@NonNull String name, @NonNull String type, double price, int surface, int number_rooms, @NonNull String description, @NonNull String address, double latitude, double longitude, @NonNull Timestamp date_creation, @NonNull Timestamp date_last_update, boolean sold, @NonNull User user) {
         //we set the id to 0 because 0 is considerating  as not-set while inserting the item
         id = 0;
         this.type = type;
@@ -68,14 +70,14 @@ final public class Property implements Serializable {
     public double longitude;
 
     @NonNull
-    public Date date_creation;
+    public Timestamp date_creation;
 
     @NonNull
-    public Date date_last_update;
+    public Timestamp date_last_update;
 
     public boolean sold;
 
-    @NonNull
+    @Embedded
     public User user;
 
     @Override
